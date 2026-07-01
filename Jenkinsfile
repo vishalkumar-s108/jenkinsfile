@@ -14,10 +14,10 @@ pipeline {
         }
         stage('Test Secret Masking') {
             steps {
-                echo 'Chalo check karte hain ki password dikh raha hai ya nahi...'
+                echo 'Lets go check your password...'
                 
                 // Hum jaanbujhkar password ko print karne ki koshish kar rahe hain
-                sh "echo 'Mera password ye hai: ${DB_PASSWORD}'"
+                sh "echo 'This is my password: ${DB_PASSWORD}'"
             }
         }
     }
