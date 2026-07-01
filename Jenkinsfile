@@ -12,5 +12,10 @@ pipeline {
                 echo 'Jenkinsfile successfully GitHub se read ho gayi hai!'
             }
         }
+        stage('Step 3: Poll SCM Test') {
+            steps {
+                echo 'Wow! Ye build bina kisi button ke apne aap chali hai!'
+            }
+        }
     }
 }
