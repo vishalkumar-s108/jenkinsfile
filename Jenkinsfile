@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Step 3: Poll SCM Test') {
             steps {
-                echo 'Wow! wow This is Automation part has done!'
+                echo 'Wow! wow This is Automation part has done with weebhook!'
             }
         }
     }
