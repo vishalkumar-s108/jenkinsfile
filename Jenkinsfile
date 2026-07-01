@@ -1,20 +1,23 @@
 pipeline {
     agent any 
 
+    environment {
+        // Jenkins locker se secret nikal kar is variable mein daal rahe hain
+        DB_PASSWORD = credentials('my-db-pass')
+    }
+
     stages {
-        stage('Step 1: Welcome') {
+        stage('Welcome') {
             steps {
-                echo 'Hello World! im here .'
+                echo 'Securing our pipeline...'
             }
         }
-        stage('Step 2: Testing') {
+        stage('Test Secret Masking') {
             steps {
-                echo 'Jenkinsfile successfully GitHub !'
-            }
-        }
-        stage('Step 3: Poll SCM Test') {
-            steps {
-                echo 'Wow! wow This is Automation part has done with weebhook!'
+                echo 'Chalo check karte hain ki password dikh raha hai ya nahi...'
+                
+                // Hum jaanbujhkar password ko print karne ki koshish kar rahe hain
+                sh "echo 'Mera password ye hai: ${DB_PASSWORD}'"
             }
         }
     }
